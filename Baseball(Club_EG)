@@ -1,0 +1,16 @@
+//EG class
+public class EG extends Club{
+	//attack function
+	public int attack() {
+		System.out.println("Damages is"+power+".");
+		return power;
+	}
+	//attack
+	public void attacked(int sum) {
+		//power
+		if(power>=sum)
+			hp = hp - 0;
+		else
+			hp = hp + power -sum;
+	}
+}
