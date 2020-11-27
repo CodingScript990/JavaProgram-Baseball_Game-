@@ -1,0 +1,22 @@
+//player class
+public class Player extends Character{
+	//player share power,popularity,money,experience
+	public int power;
+	public int hp;
+	public int popularity;
+	public int money = 100;
+	public int experience = 0;
+	
+	//attack
+	public int attack() {
+		return power;
+	}
+	//attack function
+	public void attacked(int sum) {
+		//popularity
+		if(popularity>=sum)
+			hp = hp - 0;
+		else
+			hp = hp + popularity - sum;
+	}
+}
