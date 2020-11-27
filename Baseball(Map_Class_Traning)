@@ -1,0 +1,26 @@
+public class Traning extends Map{
+	int power = 100;
+	int popularity = 150;
+	int hp = 20;
+	
+	public int exercise(int money, int number) {
+		name ="Traning";
+		System.out.println(name+"is trying.....");
+		if(number==1) {
+			//power<=money
+			if(power<=money)
+				return money-power;
+		}
+		if(number==2) {
+			//popularity<=money
+			if(popularity<=money)
+				return money-popularity;
+		}
+		if(number==3) {
+			//hp<=money
+			if(hp<=money)
+				return money-hp;
+		}
+		return -1;
+	}
+}
