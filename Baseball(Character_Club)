@@ -1,0 +1,18 @@
+public class Club extends Character{
+	//club basic power,money,experience
+	public int power;
+	public int money;
+	public int experience;
+	//attack
+	public int attack() {
+		return power;
+	}
+	//attack function
+	public void attacked(int sum) {
+		//power
+		if(power>=sum)
+			hp = hp - 0;
+		else
+			hp = hp + power - sum;
+	}
+}
