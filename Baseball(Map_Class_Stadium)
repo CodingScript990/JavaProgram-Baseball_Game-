@@ -1,0 +1,44 @@
+public class Stadium extends Map{
+	int general_ticket = 30;
+	int amateur_ticket = 60;
+	int premier_ticket = 120;
+	int gold_ticket = 180;
+	int diamond_ticket = 250;
+	int final_ticket = 320;
+	
+	public int ticket_offic(int money,int number) {
+		name = "ticket_offic";
+		System.out.println(name+"is bought something...");
+		if(number==1) {
+			//general
+			if(general_ticket<=money)
+				return money-general_ticket;
+		}
+		if(number==2) {
+			//amateur
+			if(amateur_ticket<=money)
+				return money-amateur_ticket;
+		}
+		if(number==3) {
+			//premier
+			if(premier_ticket<=money)
+				return money-premier_ticket;
+		}
+		if(number==4) {
+			//gold
+			if(gold_ticket<=money)
+				return money-gold_ticket;
+		}
+		if(number==5) {
+			//diamond
+			if(diamond_ticket<=money)
+				return money-diamond_ticket;
+		}
+		if(number==6) {
+			//final
+			if(final_ticket<=money)
+				return money-final_ticket;
+		}
+		return -1;
+	}
+}
