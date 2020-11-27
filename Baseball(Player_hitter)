@@ -1,0 +1,45 @@
+//hitter class
+public class Hitter extends Player{
+	//attack function
+	public int attack() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("1.Dragging");
+		System.out.println("2.Bunt");
+		System.out.println("3.Manseta_Dragging");
+		System.out.println("Choose a blow");
+		int number = sc.nextInt();
+		//sum all attack
+		int sum = 0;
+		//Dragging
+		if(number==1) {
+			sum+=level*10;
+			sum+=power*12;
+			System.out.println("Damages is "+sum+".");
+			return sum;
+		}
+		//bunt
+		else if(number==2) {
+			sum+=level*7;
+			sum+=power*9;
+			System.out.println("Damages is "+sum+".");
+			return sum;
+		}
+		//Manseta
+		else if(number==3) {
+			sum+=level*15;
+			sum+=power*30;
+			System.out.println("Damages is "+sum+".");
+			return sum;
+		}
+		System.out.println("Damages is "+sum+".");
+		return sum;
+	}
+	//attack function
+	public void attacked(int sum) {
+		//power
+		if(power>=sum)
+			hp = hp - 0;
+		else
+			hp = hp + power - sum;
+	}
+}
