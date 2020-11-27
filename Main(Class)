@@ -1,0 +1,259 @@
+public class Baseball_Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Player player = new Player();
+		//main
+		System.out.println("----------Baseball Play Game----------");
+		System.out.println("1.Hitter");
+		System.out.println("2.Pitcher");
+		System.out.println("Please select a player : ");
+		int number = sc.nextInt();
+		//Hitter choice
+		if(number==1) {
+			System.out.println("You have selected a hitter!!");
+			player = new Hitter();
+			player.power =18;
+			player.level = 1;
+			player.hp = 80;
+			player.popularity = 0;
+		}
+		//Pitcher choice
+		else if(number==2) {
+			System.out.println("You have selected a pitcher!!");
+			player = new Pitcher();
+			player.power =15;
+			player.level = 1;
+			player.hp = 100;
+			player.popularity = 0;
+		}
+		//nickname writing
+		System.out.println("Please enter a nickname : ");
+		player.name = sc.next();
+		System.out.println("Complete!!!");
+		System.out.println("Play Game~!");
+		
+		//player experience show
+		while(true) {
+			System.out.println("*******************************");
+			System.out.println("Nickname : "+player.name);
+			System.out.println("level : "+player.level);
+			System.out.println("Power : "+player.power);
+			System.out.println("HP : "+player.hp);
+			System.out.println("Money : "+player.money);
+			System.out.println("Experience : "+player.experience);
+			System.out.println("Popularity : "+player.popularity);
+			System.out.println("*******************************");
+			//place choice
+			System.out.println("1.Stadium");
+			System.out.println("2.Traning");
+			System.out.println("3.Play-Game!");
+			System.out.println("Where are you going to go?");
+			number = sc.nextInt();
+			//Stadium place
+			if(number==1) {
+				Stadium ticket_offic = new Stadium();
+				System.out.println("Welcome to the stadium!!");
+				System.out.println("1.Buy the ticket!!");
+				Stadium buy = new Stadium();
+				System.out.println("1.General_ticket");
+				System.out.println("2.Amateur_ticket");
+				System.out.println("3.Premier_ticket");
+				System.out.println("4.Gold_ticket");
+				System.out.println("5.Diamond_ticket");
+				System.out.println("6.Final_ticket");
+				System.out.println("Your Choose ticket!");
+				number = sc.nextInt();
+				int temp = player.money;
+				//ticket buy
+				if((player.money = ticket_offic.ticket_offic(player.money, number))!= -1) {
+					System.out.println("Complete!!Bought Ticket!!");
+					if(number==1)
+						player.money -= 30;
+					else if(number==2)
+						player.money -= 60;
+					else if(number==3)
+						player.money -= 120;
+					else if(number==4)
+						player.money -= 180;
+					else if(number==5)
+						player.money -= 250;
+					else if(number==6)
+						player.money -= 320;
+				}
+				else {
+					System.out.println("Money is scarce....");
+					player.money = temp;
+				}
+			}
+			//Traning
+			else if(number==2) {
+				Traning traning = new Traning();
+				System.out.println("Welcome to the training center~!");
+				System.out.println("1.Power-traning");
+				System.out.println("2.Popularity-traning");
+				System.out.println("3.HP-traning");
+				System.out.println("Choice number : ");
+				number = sc.nextInt();
+				int temp = player.money;
+				if((player.money = traning.exercise(player.money, number))!= -1) {
+					System.out.println("Complete~!Traning!!");
+					if(number==1)
+						player.power += 5;
+					if(number==2)
+						player.popularity += 5;
+					if(number==3)
+						player.hp += 10;
+				}
+				else {
+					System.out.println("Money is scarce....");
+					player.money = temp;
+				}
+			}
+			else if(number==3) {
+				Club club = new Club();
+				System.out.println("This is the opponent's list...");
+				System.out.println("1.NC");
+				System.out.println("2.KT");
+				System.out.println("3.LG");
+				System.out.println("4.BS");
+				System.out.println("5.HR");
+				System.out.println("6.LI");
+				System.out.println("7.KIA");
+				System.out.println("8.SK");
+				System.out.println("9.GT");
+				System.out.println("10.EG");
+				System.out.println("Pick a team to deal with : ");
+				number = sc.nextInt();
+				//NC
+				if(number==1) {
+					club = new NC();
+					club.name = "NC";
+					club.hp = 1000;
+					club.power = 1000;
+					club.level = 100;
+					club.money = 1000;
+					club.experience = 500;
+				}
+				//KT
+				else if(number==2) {
+					club = new KT();
+					club.name = "KT";
+					club.hp = 960;
+					club.power = 960;
+					club.level = 96;
+					club.money = 900;
+					club.experience = 400;
+				}
+				//LG
+				else if(number==3) {
+					club = new LG();
+					club.name = "LG";
+					club.hp = 920;
+					club.power = 860;
+					club.level = 82;
+					club.money = 800;
+					club.experience = 300;
+				}
+				//BS
+				else if(number==4) {
+					club = new BS();
+					club.name = "BS";
+					club.hp = 860;
+					club.power = 750;
+					club.level = 70;
+					club.money = 700;
+					club.experience = 250;
+				}
+				//HR
+				else if(number==5) {
+					club = new HR();
+					club.name = "HR";
+					club.hp = 700;
+					club.power = 600;
+					club.level = 55;
+					club.money = 550;
+					club.experience = 180;
+				}
+				//LI
+				else if(number==6) {
+					club = new LI();
+					club.name = "LI";
+					club.hp = 600;
+					club.power = 500;
+					club.level = 42;
+					club.money = 410;
+					club.experience = 100;
+				}
+				//KIA
+				else if(number==7) {
+					club = new KIA();
+					club.name = "KIA";
+					club.hp = 500;
+					club.power = 380;
+					club.level = 24;
+					club.money = 280;
+					club.experience = 75;
+				}
+				//SK
+				else if(number==8) {
+					club = new SK();
+					club.name = "SK";
+					club.hp = 300;
+					club.power = 200;
+					club.level = 12;
+					club.money = 130;
+					club.experience = 50;
+				}
+				//GT
+				else if(number==9) {
+					club = new GT();
+					club.name = "GT";
+					club.hp = 200;
+					club.power = 100;
+					club.level = 8;
+					club.money = 80;
+					club.experience = 25;
+				}
+				//EG
+				else if(number==10) {
+					club = new EG();
+					club.name = "EG";
+					club.hp = 100;
+					club.power = 50;
+					club.level = 2;
+					club.money = 20;
+					club.experience = 10;
+				}
+				while(true) {
+					System.out.println("Player Turn~!");
+					club.attacked(player.attack());
+					//club hp
+					if(club.hp <= 0) {
+						System.out.println(club.name+" is lose..");
+						player.experience += club.experience;
+						player.money += club.money;
+						break;
+					}
+					System.out.println(club.name+" is attack!!");
+					player.attacked(club.attack());
+					//player hp
+					if(player.hp <= 0) {
+						System.out.println("Your lose...");
+						//player hp => 1
+						player.hp = 1;
+						System.out.println("Player hp "+player.hp+" it is..");
+						break;
+					}
+				}
+			}
+			if(player.experience >= player.level*100) {
+				player.level += 1;
+				System.out.println("Player level is"+player.level+" become!");
+				player.money += player.level*8;
+				System.out.println("Level up!!"+player.money+" got it as a reward!");
+				player.experience = 0;
+			}
+		}
+	}			
+}
