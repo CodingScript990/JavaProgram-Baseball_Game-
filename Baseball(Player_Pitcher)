@@ -1,0 +1,45 @@
+public class Pitcher extends Player{
+	//attack
+	public int attack() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("1.Fast_Ball");
+		System.out.println("2.Curve_Ball");
+		System.out.println("3.Changeup_Ball");
+		System.out.println("Chose the structure of the throwing ball : ");
+		int number = sc.nextInt();
+		
+		//sum all attack
+		int sum = 0;
+		//fastball
+		if(number==1) {
+			sum+=level*8;
+			sum+=power*10;
+			System.out.println("Damages is "+sum+".");
+			return sum;
+		}
+		//curve
+		if(number==2) {
+			sum+=level*12;
+			sum+=power*15;
+			System.out.println("Damages is "+sum+".");
+			return sum;
+		}
+		//changeup
+		if(number==3) {
+			sum+=level*16;
+			sum+=power*20;
+			System.out.println("Damages is "+sum+".");
+			return sum;
+		}
+		System.out.println("Damages is "+sum+".");
+		return sum;
+	}
+	//attack function
+	public void attacked(int sum) {
+		//power
+		if(power>=sum)
+			hp = hp - 0;
+		else
+			hp = hp + power - sum;
+	}
+}
